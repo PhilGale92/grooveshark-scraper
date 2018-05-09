@@ -1,0 +1,145 @@
+/* reset segment */
+* { padding:0; border:0; margin:0; color:#000; font-family: 'Open Sans', sans-serif; font-size:13px;}
+html { width:100%; height:100%;}
+body {width:720px; text-align:center; margin:0 auto; background-color:#000;}
+#page { margin-top:10px; text-align:left; border-radius: 10px; background-color:#fff; }
+#page_inner { padding:20px; position:relative;}
+.clear { clear:both; }
+.hidden { display:none; }
+
+/* lightbox */
+#lightbox_bg {
+	background-color:#000;
+	opacity:0.8;
+	position:fixed;
+	z-index:5;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+#lightbox_wrapper{
+	background-color:#fff;
+	border-radius:8px;
+	position:fixed;
+	width:300px;
+	height:200px;
+	text-align:left;
+	left:50%;
+	z-index:10;
+	margin-left:-150px;
+	top:200px;
+	box-shadow: 0 0 9px silver;
+}
+
+#lightbox {	padding:10px;}
+#lightbox_max, #lightbox_status { display:inline; }
+#lightbox_wrapper a { font-weight:bold;}
+
+/* lightbox status sfx. */
+#lightbox_wrapper.complete div, #lightbox_wrapper.complete p, #lightbox_wrapper.complete a,
+#lightbox_wrapper.timeoutlong div, #lightbox_wrapper.timeoutlong p, #lightbox_wrapper.timeoutlong a,
+#lightbox_wrapper.fatal div, #lightbox_wrapper.fatal p, #lightbox_wrapper.fatal a  {color:#fff; text-decoration:none;}
+
+#lightbox_wrapper.complete {background-color:#008080;}
+#lightbox_wrapper.timeout {background-color:#FF8C00;}
+#lightbox_wrapper.timeoutlong { background-color:#8B0000;}
+#lightbox_wrapper.progress {background-color:#ADD8E6;}
+#lightbox_wrapper.reconnected { background-color:#90EE90;}
+#lightbox_wrapper.fatal { background-color:#000;}
+
+/* basic styles*/
+h1, h2 { margin-bottom:10px;}
+h1 { font-size:18px;}
+h2 { font-size:16px;}
+h3 { font-size:14px;}
+
+/* form stuff */
+fieldset { border:2px solid #000; margin:0 10px 0 10px; padding:0 10px 0 10px; background-color:#0f0f0f; border-radius:5px;}
+fieldset label { color:silver;}
+input[type="text"] {background-color:#0f0f0f; color:silver; border:1px solid silver;}
+input[type="submit"] { background-color:#0f0f0f; color:silver; cursor:pointer; border:2px solid silver;}
+input { margin-top:10px; margin-bottom:10px; }
+
+/* song results */
+.song_data, #list_data { display:none; }
+.song_result { 
+	background-color:#034F0A;
+	border:2px solid green;
+	height:60px;
+	width:100%;
+	border-radius:8px;
+	margin-bottom:15px;
+}
+.song_result.active { background-color:#B2B1CC;}
+
+.song_result_inner { 
+	position:relative;
+	padding:10px;
+}
+.song_result a {text-decoration:none;}
+.song_result, .song_result_inner, .song_result a, .song_result p { font-size:12px;  color:#fff;}
+.song_result.active, .song_result_inner, .song_result.active a, .song_result.active p { color:#000;}
+.highbtn, .mobilebtn {
+	height:30px;
+	position:absolute;
+	right:0px;
+	cursor:pointer;
+	width:50px;
+	line-height:30px;
+	color:#fff;
+	text-align:center;
+	display:block;
+}
+
+.download_description { padding-bottom:10px;}
+.highbtn {top:0; background-color:#5E0100; border-radius:0 5px 0 0; height:31px;}
+.highbtn:hover, .highbtn.active {background-color:#AD0000; }
+.mobilebtn {bottom:-5px; background-color:#004242; border-radius:0 0 5px 0 ;}
+.mobilebtn:hover, .mobilebtn.active { background-color:#007272; }
+
+/* operative buttons */
+#select_all_option_low, #select_all_option_high {
+	margin-right:10px;
+	width:120px;
+}
+
+#download_selected_option {
+	width:150px;
+	float:none !important;
+}
+
+#back_link {
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+	padding-bottom:20px;
+	padding-top:10px;
+	text-decoration:none;
+}
+
+#back_link:hover{color:blue; } 
+
+#download_selected_option, #select_all_option_low, #select_all_option_high {
+	text-align:center;
+	line-height:29px;
+	font-weight:bold;
+	border-radius:4px;
+	height:30px;
+	margin-bottom:10px;
+	display:block;
+	cursor:pointer;
+	float:left;	
+	background-color:grey;
+}
+
+#download_selected_option.disabled { 
+	color:silver;
+	cursor:default;
+}
+#download_selected_option.enabled:hover,
+#select_all_option_low:hover,
+#select_all_option_high:hover{
+	color:white;
+}

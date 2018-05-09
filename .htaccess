@@ -1,0 +1,14 @@
+<FilesMatch "\.(inc(\.php)|config(\.php)|trait(\.php)|interface(\.php)|class(\.php)|controller(\.php)|engine(\.php)|.*sql|tpl(\.php))$">
+	Order allow,deny
+</FilesMatch>
+
+#Options -Indexes
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	rewriteEngine on
+	RewriteRule "(^|/)\." - [F]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !=/favicon.ico
+	RewriteRule ^(.*)$ bootstrap.php?q=$1 [L,QSA]
+</IfModule>
